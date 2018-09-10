@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}
+ارتباط با ما
+{% endblock title %}
+
+
+{% block content %}
+<div class="section-seperator">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="mapouter"><div class="gmap_canvas"><iframe width="1200" height="500" style="width:100% !important;" id="gmap_canvas" src="https://maps.google.com/maps?q=Karaj%2C%20Iran&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a style="width:100% !important;" href="https://www.pureblack.de"></a></div><style>.mapouter{text-align:right;height:500px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%;}</style></div>
+        </div>
+    </div>
+</div>
+<!-- Comment -->
+<div class="section-seperator">
+    <div class="content-md container">
+        <div class="row margin-b-40">
+            <div class="col-sm-6 col-sm-offset-6">
+                <h2>{{contact_intro.title}}</h2>
+                <p>{{contact_intro.description}}</p>
+            </div>
+        </div>
+        <!--// end row -->
+
+        <div class="row">
+            <div class="col-md-5 col-sm-offset-7">
+                <form action="." enctype="multipart/form-data" method="POST">
+                    {% csrf_token %}
+                    {% for field in contact_form %}
+                    {% if field.errors %}
+                    <div class="control-group error">
+                        <label class="control-label">{{ field.label }}</label>
+                        <div class="controls">{{ field }}
+                            <span class="help-inline">
+                                {% for error in field.errors %}{{ error }}{% endfor %}
+                            </span>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="margin-b-10">
+                        {{ field }}
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    <br>
+                    <button type="submit" class="btn-theme btn-theme-sm btn-base-bg text-uppercase ">ارسال</button>
+                </form>
+            </div>
+        </div>
+        <!--// end row -->
+    </div>
+</div>
+<!-- End Comment --
+{% endblock content %}

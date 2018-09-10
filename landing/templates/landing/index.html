@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %} خانه {% endblock %}
+
+{% block content %}
+
+<!-- Work -->
+{% comment %} {% include 'components/works_header.html' %} {% endcomment %}
+<!-- End Work -->
+
+<!-- Service -->
+{% include 'components/services.html'  %}
+<!-- End Service -->
+
+<!-- Clients -->
+{% include 'components/clients.html' %}
+<!-- End Clients -->
+
+<!-- Testimonials -->
+{% include 'components/testimonial.html' %}
+<!-- End Testimonials -->
+
+<!-- Pricing -->
+{% include 'components/pricing.html' %}
+<!-- End Pricing -->
+
+<!-- Work -->
+{% include 'components/works.html' %}
+<!-- End Work -->
+
+
+
+<!-- Team -->
+{% include 'components/team.html' %}
+<!-- End Team -->   
+
+{% endblock %}

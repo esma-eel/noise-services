@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %} درباره ما {% endblock %}
+
+{% block content %}
+
+<!-- Slider -->
+<div class="bg-color-sky-light">
+        <div class="content-md container">
+            <img class="img-responsive" src="{{about.image_slider.url}}" alt="{{about.title}}">
+        </div>
+    </div>
+    <!-- End Slider -->
+
+    <!-- About -->
+    <div class="content-md container">
+        <div class="row margin-b-20">
+            <div class="col-sm-6">
+                <h2>{{about.title}}</h2>
+            </div>
+        </div>
+        <!--// end row -->
+
+        <div class="row">
+            <div class="col-sm-7 sm-margin-b-50">
+                <div class="margin-b-30">
+                    <p>{{about.get_markdown|safe|linebreaks}}</p>
+                </div>
+                
+            </div>
+            <div class="col-sm-4 col-sm-offset-1">
+                <img class="img-responsive" src="{{about.image_thumbnail.url}}" alt="{{about.title}}">
+            </div>
+        </div>
+        <!--// end row -->
+    </div>
+    <!-- End About -->
+
+<!-- Service -->
+{% include 'components/services.html'  %}
+<!-- End Service -->
+
+<!-- Team -->
+{% include 'components/team.html' %}
+<!-- End Team -->   
+
+<!-- Clients -->
+{% include 'components/clients.html' %}
+<!-- End Clients -->
+
+
+
+
+{% endblock %}

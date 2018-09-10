@@ -1,0 +1,21 @@
+{% extends "team_base.html" %}
+
+{% block title %} {{team_mate_detail.name}} - {{ team_mate_detail.last_name }}{% endblock %}
+
+{% block content %}
+  <!-- About -->
+  {% include "components/team/team_about.html" %}
+  <!-- End About -->
+
+  <!-- Experience -->
+  {% include "components/team/team_experience.html" %}
+  <!-- End Experience -->
+
+  <!-- Work -->
+  {% include "components/team/team_work.html" %}
+  <!-- End Work -->
+
+  <!-- Contact -->
+  {% include "components/team/team_contact.html" %}
+  <!-- End Contact -->
+{% endblock content %}

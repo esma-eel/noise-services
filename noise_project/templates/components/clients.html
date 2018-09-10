@@ -1,0 +1,26 @@
+<!-- Clients -->
+<div class="content-md container">
+    <div class="row margin-b-40">
+        <div class="col-sm-6 col-sm-offset-6">
+            <h2>{{customer_intro.title}}</h2>
+            <p>{{customer_intro.description}}</p>
+        </div>
+    </div>
+    <!--// end row -->
+
+    <!-- Swiper Clients -->
+    <div class="swiper-slider swiper-clients">
+        <!-- Swiper Wrapper -->
+        <div class="swiper-wrapper">
+            {% for customer in customers %}
+            <div class="swiper-slide">
+                <img class="swiper-clients-img" src="{{customer.logo.url}}" alt="{{customer.name}}">
+            </div>
+            {% endfor %}
+
+        </div>
+        <!-- End Swiper Wrapper -->
+    </div>
+    <!-- End Swiper Clients -->
+</div>
+<!-- End Clients -->
