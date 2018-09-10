@@ -9,6 +9,7 @@ from landing.models import Navigation
 
 
 navigation_links = Navigation.objects.filter(for_footer=False).all()
+navigation_footer = Navigation.objects.filter(for_footer=True).all()
 
 
 def teammate(request, team_mate_id):
@@ -19,6 +20,7 @@ def teammate(request, team_mate_id):
     contextvar = {
         'team_mate_detail': team_mate_detail,
         'navigation_links': navigation_links,
+        'navigation_footer': navigation_footer,
         'team_mate_projects':team_mate_projects,
     }
 

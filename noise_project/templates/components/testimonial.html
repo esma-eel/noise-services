@@ -13,7 +13,7 @@
                     <div class="swiper-slide">
                         <blockquote class="blockquote">
                             <div class="margin-b-20">
-                                {{testimonial.text}}
+                                {{testimonial.text|safe|linebreaks}}
                             </div>
                             {% comment %} can add text two {% endcomment %}
                             <p><span class="fweight-700 color-link">{{testimonial.from_who}}</span>,
