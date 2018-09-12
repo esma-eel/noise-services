@@ -11,12 +11,12 @@ def contact_view(request):
     navigation_links = Navigation.objects.filter(for_footer=False).all()
     contact_intro = ContactIntro.objects.filter(active=True).first()
     form = ContactForm(request.POST or None, request.FILES or None)
-    success_message = 'پیام شما با موفقیت ارسال شد، پس از بررسی با شما ارتباط برقرار خواهیم کرد'
+    success_message = ' پیام شما با موفقیت ارسال شد، پس از بررسی با شما ارتباط برقرار خواهیم کرد '
     if request.method == 'POST':
         if form.is_valid():
             contact = form.save(commit=False)
             contact.save()
-            messages.success(request, success_message)
+            messages.success(request,contact.name + success_message)
             return redirect('contact')
 
     contextvar = {

@@ -5,7 +5,9 @@
 {% endblock title %}
 
 
+
 {% block content %}
+
 <div class="section-seperator">
     <div class="row">
         <div class="col-md-12">
@@ -23,7 +25,8 @@
             </div>
         </div>
         <!--// end row -->
-
+        {% include "components/messages.html" %}
+        <br>
         <div class="row">
             <div class="col-md-5 col-sm-offset-7">
                 <form action="." enctype="multipart/form-data" method="POST">
@@ -52,5 +55,5 @@
         <!--// end row -->
     </div>
 </div>
-<!-- End Comment --
+<!-- End Comment -->
 {% endblock content %}

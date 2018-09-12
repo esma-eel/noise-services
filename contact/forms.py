@@ -5,14 +5,14 @@ from .models import Contact
 class ContactForm(forms.ModelForm):
     name = forms.CharField(max_length=500)
     email = forms.EmailField()
-    phone = forms.CharField(max_length=250)
+    phone = forms.IntegerField()
     message = forms.CharField(widget=forms.Textarea()) 
-    file = forms.FileField()
+    file = forms.FileField(required=False)
 
     name.widget.attrs.update({'class': 'form-control', 'placeholder': 'نام و نام خانوادگی'})
     email.widget.attrs.update({'class': 'form-control', 'placeholder': 'ایمیل'})
     phone.widget.attrs.update({'class': 'form-control', 'placeholder': 'شماره تماس'})
-    message.widget.attrs.update({'class': 'form-control', 'placeholder': 'پیام'})
+    message.widget.attrs.update({'class': 'form-control', 'placeholder': 'متن پیام یا سفارش'})
     file.widget.attrs.update({'class': 'form-control', 'placeholder': 'ارسال فایل', 'accept':
         ".pdf, .docx, .jpg, .png", 'draggable':"true"})
 
