@@ -40,7 +40,7 @@ navigation_footer = Navigation.objects.filter(for_footer=True).all()
 
 def index(request):
 
-    
+    projects = Project.objects.all()[:3]
 
     contextvar = {
         'text': 'this is text wiitch',

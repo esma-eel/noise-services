@@ -9,6 +9,7 @@ from landing.models import Navigation
 # Create your views here.
 def contact_view(request):
     navigation_links = Navigation.objects.filter(for_footer=False).all()
+    navigation_footer = Navigation.objects.filter(for_footer=True).all()
     contact_intro = ContactIntro.objects.filter(active=True).first()
     form = ContactForm(request.POST or None, request.FILES or None)
     success_message = ' پیام شما با موفقیت ارسال شد، پس از بررسی با شما ارتباط برقرار خواهیم کرد '
@@ -23,6 +24,7 @@ def contact_view(request):
         'contact_form': form,
         'navigation_links': navigation_links,
         'contact_intro':contact_intro,
+        'navigation_footer': navigation_footer,
     }
 
     return render(request, 'contact/contact.html', contextvar)
