@@ -2,10 +2,10 @@
 <div class="bg-color-sky-light">
     <div class="content-lg container">
         <div class="row row-space-1">
-            {% for priceplan in price_plans reversed %}
+            {% for priceplan in price_plans %}
             <div class="col-sm-4 sm-margin-b-2">
                 <!-- Pricing -->
-                <div class="pricing {% if priceplan.is_special %} active{% endif %}">
+                <div class="pricing {% if priceplan.is_special %} pricing-active {% endif %}">
                     <div class="margin-b-30">
                         <i class="pricing-icon icon-badge"></i>
                         <h3>{{priceplan.name}} - {{priceplan.price}}</h3>
@@ -18,10 +18,14 @@
 
 
                     </ul>
-                    <a href="pricing.html" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Choose</a>
+                    <div class="text-center">
+                        <a href="{% url 'contact' %}" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">انتخاب</a>
+                    </div>
                 </div>
                 <!-- End Pricing -->
             </div>
+
+            {% cycle "" "" "</div><div class='row'>" %}
             {% endfor %}
         </div>
         <!--// end row -->

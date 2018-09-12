@@ -17,9 +17,13 @@ class Project(models.Model):
     team_mates = models.ManyToManyField('Person', related_name='person_projects')
     technologies = models.ManyToManyField('Technology', related_name='tech_used_in_projects')
     customer = models.CharField(max_length=1500, null=True, blank=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = ('-timestamp',)
 
 
 class ProjectIntro(models.Model):

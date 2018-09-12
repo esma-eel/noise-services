@@ -24,7 +24,7 @@
                 <div class="menu-container">
                     <ul class="navbar-nav navbar-nav-right">
                         <!-- Link -->
-                        {% for nav_item in navigation_links reversed %}
+                        {% for nav_item in navigation_links %}
                         <li class="nav-item">
                             <a class="nav-item-child {% if request.path.url == nav_item.full_url %} active {% endif %}" href="{{nav_item.full_url}}">
                                 {{nav_item.name}}

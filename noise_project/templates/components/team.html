@@ -2,7 +2,7 @@
 <div class="bg-color-sky-light">
         <div class="content-md container">
             <div class="row margin-b-40">
-                <div class="col-sm-6 col-sm-offset-6">
+                <div class="col-sm-6">
                     <h2>{{team_mates_intro.title}}</h2>
                     <p>{{team_mates_intro.description}}</p>
                 </div>
@@ -20,7 +20,7 @@
                             <img class="img-responsive" src="{{team_mate.picture_small.url}}" alt="{{team_mate.name}}">
                         </div>
                     </div>
-                    <h4><a href="#">{{team_mate.name}} - {{team_mate.last_name}}</a> <span class="text-uppercase margin-l-20">{{team_mate.job_title}}</span> </h4>
+                    <h4><a href="{{team_mate.get_absolute_url}}">{{team_mate.name}} - {{team_mate.last_name}}</a> <span class="text-uppercase margin-l-20">{{team_mate.job_title}}</span> </h4>
                     <p>{{team_mate.description}}</p>
                    
                     <a class="link" href="{{team_mate.get_absolute_url}}">بیشتر</a>

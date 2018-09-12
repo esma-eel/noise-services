@@ -6,6 +6,7 @@
 <!-- BEGIN HEAD -->
 
 <head>
+    {% load compress %}
     {% load static %}
     <meta charset="utf-8" />
     <title>{% block title %} Base {% endblock %}</title>
@@ -15,7 +16,8 @@
     <meta content="Esmaeel Komijani" name="author" />
 
     
-    {% block stylesheet %}
+    
+    {% compress css %}
       <!-- GLOBAL MANDATORY STYLES -->
     <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
     <link href="{% static 'main/vendor/simple-line-icons/simple-line-icons.min.css' %}" rel="stylesheet" type="text/css" />
@@ -28,7 +30,8 @@
     
     <link href="{% static 'team/css/rtl_team.css' %}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{% static 'main/css/master.css' %}" rel="stylesheet" type="text/css">
-    {% endblock  %}
+    {% endcompress %}
+  
     <!-- Favicon -->
     {% comment %}
     <link rel="shortcut icon" href="favicon.ico" /> {% endcomment %}
@@ -63,9 +66,10 @@
 
    
 
-    {% block javascript %}
+
+    {% compress js %}
        <!-- Back To Top -->
-    <a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>
+    <a href="javascript:void(0);" class="js-back-to-top back-to-top">بالا</a>
 
     <!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
     <!-- CORE PLUGINS -->
@@ -88,7 +92,8 @@
     <script src="{% static 'team/js/components/progress-bar.min.js' %}" type="text/javascript"></script>
     <script src="{% static 'team/js/components/masonry.min.js' %}" type="text/javascript"></script>
     <script src="{% static 'team/js/components/wow.min.js' %}" type="text/javascript"></script>
-    {% endblock  %}
+    {% endcompress %}
+   
 
 </body>
 <!-- END BODY -->

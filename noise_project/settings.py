@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'compressor',
     'pagedown',
     'markdown_deux',
     'projects',
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'contact',
     'pricing',
     'landing',
+    
 ]
 
 MIDDLEWARE = [
@@ -127,14 +129,26 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
+
+COMPRESS_ROOT = os.path.join(BASE_DIR, 'static')
+COMPRESS_URL = '/compressed/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'noise_project/staticfiles/'),
 ]
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/static/'
+
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

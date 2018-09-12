@@ -15,7 +15,10 @@ class PricePlan(models.Model):
     # plan_features = models.ManyToManyField('PlanFeature')
     is_special = models.BooleanField(default=False)
     price = models.CharField(max_length=1500)
+    timestamp = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering = ('-timestamp',)
 
     def __str__(self):
         return self.name
