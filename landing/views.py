@@ -9,31 +9,21 @@ from testimonial.models import (
 from pricing.models import (
     PricePlan,
 )
-
 from about.models import About
-
 from projects.models import (Project, ProjectIntro)
 from team.models import (TeamMate, TeamIntro)
 from .models import Navigation
-
 # Create your views here.
-
 services = Service.objects.all()
-
 customers = Customers.objects.all()
 customer_intro = CustomersIntro.objects.filter(active=True).first()
-
 testimonials = Testimonial.objects.all()
 testimonial_intro = TestimonialsIntro.objects.filter(active=True).first()
-
 price_plans = PricePlan.objects.all().reverse()
-
 projects = Project.objects.all()
 projects_intro = ProjectIntro.objects.filter(active=True).first()
-
 team_mates = TeamMate.objects.all()
 team_mates_intro = TeamIntro.objects.filter(active=True).first()
-
 navigation_links = Navigation.objects.filter(for_footer=False).all()
 navigation_footer = Navigation.objects.filter(for_footer=True).all()
 
@@ -77,7 +67,7 @@ def pricing_view(request):
 
 
 def about_view(request):
-
+    
     about = About.objects.all().first()
 
     contextvar = {

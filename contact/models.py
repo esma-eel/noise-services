@@ -16,11 +16,14 @@ class Contact(models.Model):
     file = models.FileField(upload_to='contacts/', null=True, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
 
+
     def __str__(self):
         return self.name
 
+
     class Meta:
         ordering = ('-timestamp',)
+
 
 class ContactIntro(models.Model):
     title = models.CharField(max_length=250)

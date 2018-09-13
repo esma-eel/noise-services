@@ -139,15 +139,10 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
 )
 
-# COMPRESS_ROOT = os.path.join(BASE_DIR, 'static')
-# COMPRESS_URL = '/compressed/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'noise_project/staticfiles/'),
 ]
-
-
-
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

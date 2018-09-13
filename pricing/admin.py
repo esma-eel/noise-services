@@ -5,10 +5,11 @@ from .models import PlanFeature, PricePlan
 class PriceFeautreAdmin(admin.ModelAdmin):
     list_display = ('text', 'description', 'price_plan',)
     ordering = ('price_plan',)
-    
+
 
 class PricePlanAdmin(admin.ModelAdmin):
     list_display = ('name', 'is_special', 'price', )
+
 
 admin.site.register(PlanFeature,PriceFeautreAdmin)
 admin.site.register(PricePlan,PricePlanAdmin)
