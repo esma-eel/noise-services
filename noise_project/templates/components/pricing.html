@@ -1,10 +1,8 @@
-<!-- Pricing -->
 <div class="bg-color-sky-light">
     <div class="content-lg container">
         <div class="row row-space-1">
             {% for priceplan in price_plans %}
             <div class="col-sm-4 sm-margin-b-2">
-                <!-- Pricing -->
                 <div class="pricing {% if priceplan.is_special %} pricing-active {% endif %}">
                     <div class="margin-b-30">
                         <i class="pricing-icon icon-badge"></i>
@@ -15,20 +13,14 @@
                         {% for planfeature in priceplan.plan_features.all %}
                         <li class="pricing-list-item">{{planfeature.text}}</li>
                         {% endfor %}
-
-
                     </ul>
                     <div class="text-center">
                         <a href="{% url 'contact' %}" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">انتخاب</a>
                     </div>
                 </div>
-                <!-- End Pricing -->
             </div>
-
             {% cycle "" "" "</div><div class='row'>" %}
             {% endfor %}
         </div>
-        <!--// end row -->
     </div>
 </div>
-<!-- End Pricing -->

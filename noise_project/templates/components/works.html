@@ -1,4 +1,3 @@
-<!-- Work -->
 <div class="bg-color-sky-light overflow-h">
     <div class="content-md container">
         <div class="row margin-b-40">
@@ -7,15 +6,10 @@
                 <p>{{projects_intro.description}}</p>
             </div>
         </div>
-        <!--// end row -->
-
-        <!-- Masonry Grid -->
         <div class="masonry-grid">
             <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
             {% for project in projects reversed%}
-
             <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-4">
-                <!-- Work -->
                 <div class="work">
                     <div class="work-overlay">
                         <img class="full-width img-responsive" src="{{project.image.url}}" alt="{{project.name}}">
@@ -26,11 +20,8 @@
                     </div>
                     <a class="content-wrapper-link" href="{{project.image.url}}"></a>
                 </div>
-                <!-- End Work -->
             </div>
             {% endfor %}
         </div>
-        <!-- End Masonry Grid -->
     </div>
 </div>
-<!-- End Work -->

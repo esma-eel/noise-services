@@ -1,22 +1,17 @@
-<!-- About -->
 <div id="about">
     <div class="container content-lg">
         <div class="row">
             <div class="col-sm-3 sm-margin-b-30">
-                <div class="text-right sm-text-left">
+                <div class="text-left sm-text-left">
                     <h2 class="margin-b-0">معرفی</h2>
                     <p>مواردی درباره من</p>
                 </div>
             </div>
-
             <div class="col-sm-8">
                 <div class="margin-b-60">
                     <p>{{team_mate_detail.description}}</p>
                 </div>
-
-                <!-- Progress Box -->
                 {% for person_skill in team_mate_detail.person_skills.all %}
-
                 <div class="progress-box text-left">
                     <h5>{{person_skill.skill_name}} &ThickSpace; <span class="color-heading pull-right">{{person_skill.skill_level}}%</span></h5>
                     <div class="progress">
@@ -24,13 +19,7 @@
                     </div>
                 </div>
                 {% endfor %}
-
-                <!-- End Progress Box -->
             </div>
-
-
         </div>
-        <!--// end row -->
     </div>
 </div>
-<!-- End About -->

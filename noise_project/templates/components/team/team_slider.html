@@ -1,4 +1,3 @@
-<!--========== SLIDER ==========-->
 {% load static %}
 <div class="promo-block parallax-window" data-parallax="scroll" data-image-src="{{ team_mate_detail.picture_big.url }}">
     <div class="container">
@@ -10,14 +9,10 @@
                 </div>
                 <ul class="list-inline">
                     {% for social_media in team_mate_detail.person_social_medias.all %}
-
                     <li><a href="{{social_media.social_url}}" class="social-icons"><i class="{{social_media.icon}}"></i></a></li>
-
                     {% endfor %}
                 </ul>
             </div>
         </div>
-        <!--// end row -->
     </div>
 </div>
-<!--========== SLIDER ==========-->

@@ -1,13 +1,8 @@
-<!-- Testimonials -->
 <div class="content-md container">
     <div class="row">
         <div class="col-sm-9">
             <h2>{{testimonial_intro.title}}</h2>
-
-            <!-- Swiper Testimonials -->
             <div class="swiper-slider swiper-testimonials">
-                <!-- Swiper Wrapper -->
-
                 <div class="swiper-wrapper">
                     {% for testimonial in testimonials %}
                     <div class="swiper-slide">
@@ -15,22 +10,14 @@
                             <div class="margin-b-20">
                                 {{testimonial.text|safe|linebreaks}}
                             </div>
-                            {% comment %} can add text two {% endcomment %}
                             <p><span class="fweight-700 color-link">{{testimonial.from_who}}</span>,
                                 {{testimonial.job_title}}</p>
                         </blockquote>
                     </div>
                     {% endfor %}
                 </div>
-
-                <!-- End Swiper Wrapper -->
-
-                <!-- Pagination -->
                 <div class="swiper-testimonials-pagination"></div>
             </div>
-            <!-- End Swiper Testimonials -->
         </div>
     </div>
-    <!--// end row -->
 </div>
-<!-- End Testimonials -->

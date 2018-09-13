@@ -8,7 +8,11 @@ class Technology(models.Model):
         return self.name
 
 class Person(models.Model):
+    name = models.CharField(max_length=500)
     person = models.ForeignKey(TeamMate, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
 
 class Project(models.Model):
     image = models.ImageField(upload_to='projects/', null=True, blank=True)

@@ -1,42 +1,30 @@
-<!-- Navbar -->
 {% load static %}
 <nav class="navbar" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="menu-container">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="toggle-icon"></span>
-                </button>
-
-                <!-- Logo -->
-                <div class="navbar-logo">
-                    <a class="navbar-logo-wrap" href="{% url 'home' %}">
-                        <img class="navbar-logo-img" src="{% static 'img/logo.png' %}" alt="Noise Logo" >
-                        {% comment %} style="width:85px;height:60px;" {% endcomment %}
-                    </a>
-                </div>
-                <!-- End Logo -->
+    <div class="container">
+        <div class="menu-container">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="toggle-icon"></span>
+            </button>
+            <div class="navbar-logo">
+                <a class="navbar-logo-wrap" href="{% url 'home' %}">
+                    <img class="navbar-logo-img" src="{% static 'img/logo.png' %}" alt="Noise Logo">
+                </a>
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse nav-collapse">
-                <div class="menu-container">
-                    <ul class="navbar-nav navbar-nav-right">
-                        <!-- Link -->
-                        {% for nav_item in navigation_links %}
-                        <li class="nav-item">
-                            <a class="nav-item-child {% if request.path.url == nav_item.full_url %} active {% endif %}" href="{{nav_item.full_url}}">
-                                {{nav_item.name}}
-                            </a>
-                        </li>
-                        {% endfor %}
-                        <!-- Link -->
-
-                    </ul>
-                </div>
-            </div>
-            <!-- End Navbar Collapse -->
         </div>
-    </nav>
-    <!-- Navbar -->
+        <div class="collapse navbar-collapse nav-collapse">
+            <div class="menu-container">
+                <ul class="navbar-nav navbar-nav-right">
+                    {% for nav_item in navigation_links %}
+                    <li class="nav-item">
+                        <a class="nav-item-child {% if request.path.url == nav_item.full_url %} active {% endif %}"
+                            href="{{nav_item.full_url}}">
+                            {{nav_item.name}}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
