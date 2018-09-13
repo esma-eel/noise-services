@@ -1,36 +1,36 @@
 <!-- Work -->
 <div class="bg-color-sky-light overflow-h">
-        <div class="content-md container">
-            <div class="row margin-b-40">
-                <div class="col-sm-6">
-                    <h2>{{projects_intro.title}}</h2>
-                    <p>{{projects_intro.description}}</p>
-                </div>
+    <div class="content-md container">
+        <div class="row margin-b-40">
+            <div class="col-sm-6">
+                <h2>{{projects_intro.title}}</h2>
+                <p>{{projects_intro.description}}</p>
             </div>
-            <!--// end row -->
-
-            <!-- Masonry Grid -->
-            <div class="masonry-grid">
-                <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
-                {% for project in projects reversed%}
-                   
-                <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-4">
-                    <!-- Work -->
-                    <div class="work">
-                        <div class="work-overlay">
-                            <img class="full-width img-responsive" src="{{project.image.url}}" alt="{{project.name}}">
-                        </div>
-                        <div class="work-content">
-                            <h3 class="color-white margin-b-5">{{project.name}}</h3>
-                            <p class="color-white margin-b-0">{{project.description}}</p>
-                        </div>
-                        <a class="content-wrapper-link" href="{{project.image.url}}"></a>
-                    </div>
-                    <!-- End Work -->
-                </div>
-                {% endfor %}
-            </div>
-            <!-- End Masonry Grid -->
         </div>
+        <!--// end row -->
+
+        <!-- Masonry Grid -->
+        <div class="masonry-grid">
+            <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
+            {% for project in projects reversed%}
+
+            <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-4">
+                <!-- Work -->
+                <div class="work">
+                    <div class="work-overlay">
+                        <img class="full-width img-responsive" src="{{project.image.url}}" alt="{{project.name}}">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="color-white margin-b-5">{{project.name}}</h3>
+                        <p class="color-white margin-b-0">{{project.description}}</p>
+                    </div>
+                    <a class="content-wrapper-link" href="{{project.image.url}}"></a>
+                </div>
+                <!-- End Work -->
+            </div>
+            {% endfor %}
+        </div>
+        <!-- End Masonry Grid -->
     </div>
-    <!-- End Work -->
+</div>
+<!-- End Work -->

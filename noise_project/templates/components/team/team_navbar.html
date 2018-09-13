@@ -10,7 +10,7 @@
             </button>
 
             <!-- Logo -->
-            
+
             <div class="logo">
                 <a class="logo-wrap" href="{% url 'home' %}">
                     <img class="logo-img logo-img-main" src="{% static 'img/logo.png' %}" alt="Noise Logo" style="width:85px;height:53px;">
@@ -25,7 +25,7 @@
             <div class="menu-container">
                 <ul class="navbar-nav navbar-nav-right">
                     <!-- Link -->
-                    {% for nav_item in navigation_links reversed %}
+                    {% for nav_item in navigation_links %}
                     <li class="nav-item">
                         <a class="nav-item-child {% if request.path.url == nav_item.full_url %} active {% endif %}"
                             href="{{nav_item.full_url}}">

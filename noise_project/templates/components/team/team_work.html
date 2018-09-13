@@ -3,61 +3,56 @@
     <div class="container content-lg">
         <div class="row">
 
-            <div class="col-sm-8 col-sm-offset-1">
-                <!-- Masonry Grid -->
-                <div class="masonry-grid row row-space-2">
-                    <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
-                    {% for project in team_mate_projects reversed %}
-                
-                    <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-6 margin-b-4">
-                        <!-- Work -->
-                        <div class="work work-popup-trigger">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="{{project.image.url}}" alt="{{project.name}}">
-                            </div>
-                            <div class="work-popup-overlay">
-                                <div class="work-popup-content">
-                                    <a href="javascript:void(0);" class="work-popup-close">بستن</a>
-                                    <div class="margin-b-30">
-                                        <h3 class="margin-b-5">{{project.name}}</h3>
-                                        <span>{{project.description|truncatechars:20}}</span>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
-                                            <div class="margin-t-10 sm-margin-t-0">
-                                                <p>{{project.description}}</p>
-                                                <ul class="list-inline work-popup-tag">
-                                                    {% for tech in project.technologies.all %}
-
-
-                                                    <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">{{tech.name}},</a></li>
-                                                    {% endfor %}
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="margin-t-10 sm-margin-t-0">
-                                               
-                                                <p class="margin-b-5"><strong>مشتری:</strong> {{project.customer}}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Work -->
-                    </div>
-                    {% endfor %}
-                </div>
-                <!-- End Masonry Grid -->
-            </div>
-
             <div class="col-sm-3 sm-margin-b-30">
-                <div class="text-right sm-text-left">
+                <div class="text-left sm-text-left">
                     <h2 class="margin-b-0">پروژه ها</h2>
                     <p>پروژه هایی که من در آن شرکت داشتم</p>
                 </div>
             </div>
+
+            <div class="col-sm-8">
+                <!-- Masonry Grid -->
+                <!-- Work -->
+                <div class="bg-color-sky-light overflow-h">
+                    <div class="content-md container">
+                        <div class="row margin-b-40">
+                            <div class="col-sm-6">
+                                <h2>{{projects_intro.title}}</h2>
+                                <p>{{projects_intro.description}}</p>
+                            </div>
+                        </div>
+                        <!--// end row -->
+
+                        <!-- Masonry Grid -->
+                        <div class="masonry-grid">
+                            <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
+                            {% for project in team_mate_projects reversed%}
+
+                            <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-4">
+                                <!-- Work -->
+                                <div class="work">
+                                    <div class="work-overlay">
+                                        <img class="full-width img-responsive" src="{{project.image.url}}" alt="{{project.name}}">
+                                    </div>
+                                    <div class="work-content">
+                                        <h3 class="color-white margin-b-5">{{project.name}}</h3>
+                                        <p class="color-white margin-b-0">{{project.description}}</p>
+                                    </div>
+                                    <a class="content-wrapper-link" href="{{project.image.url}}"></a>
+                                </div>
+                                <!-- End Work -->
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <!-- End Masonry Grid -->
+                    </div>
+                </div>
+                <!-- End Work -->
+
+                <!-- End Masonry Grid -->
+            </div>
+
+
 
         </div>
         <!--// end row -->
