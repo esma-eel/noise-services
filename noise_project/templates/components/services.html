@@ -12,7 +12,10 @@
                             <h3>{{service.title}}</h3>
                             <p class="margin-b-5">{{service.description}}</p>
                         </div>
-                        <a href="{{service.link}}" target="_blank" class="content-wrapper-link"></a>
+                        <a {% if service.link %}
+                        href="{{service.link}}" target="_blank"
+                        {% else %} href="#!"
+                        {% endif %} class="content-wrapper-link"></a>
                     </div>
                 </div>
             </div>
