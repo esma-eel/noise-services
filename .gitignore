@@ -11,6 +11,6 @@ memory.txt
 db.sqlite3
 /media
 /static
-staticfiles/
+# staticfiles/
 
 
