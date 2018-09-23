@@ -16,14 +16,14 @@ from .models import Navigation
 # Create your views here.
 services = Service.objects.all()
 customers = Customers.objects.all()
-customer_intro = CustomersIntro.objects.filter(active=True).first()
+# customer_intro = CustomersIntro.objects.filter(active=True).first()
 testimonials = Testimonial.objects.all()
-testimonial_intro = TestimonialsIntro.objects.filter(active=True).first()
+# testimonial_intro = TestimonialsIntro.objects.filter(active=True).first()
 price_plans = PricePlan.objects.all().reverse()
 projects = Project.objects.all()
-projects_intro = ProjectIntro.objects.filter(active=True).first()
+# projects_intro = ProjectIntro.objects.filter(active=True).first()
 team_mates = TeamMate.objects.all()
-team_mates_intro = TeamIntro.objects.filter(active=True).first()
+# team_mates_intro = TeamIntro.objects.filter(active=True).first()
 navigation_links = Navigation.objects.filter(for_footer=False).all()
 navigation_footer = Navigation.objects.filter(for_footer=True).all()
 
@@ -37,14 +37,14 @@ def index(request):
         'text': 'this is text wiitch',
         'services':services,
         'customers': customers,
-        'customer_intro': customer_intro,
+        # 'customer_intro': customer_intro,
         'testimonials': testimonials,
-        'testimonial_intro': testimonial_intro,
+        # 'testimonial_intro': testimonial_intro,
         'price_plans':price_plans,
         'projects': projects,
         'team_mates':team_mates,
-        'projects_intro': projects_intro,
-        'team_mates_intro': team_mates_intro,
+        # 'projects_intro': projects_intro,
+        # 'team_mates_intro': team_mates_intro,
         'navigation_links': navigation_links,
         'navigation_footer': navigation_footer,
     }
@@ -57,7 +57,7 @@ def pricing_view(request):
     contextvar = {
         'customers': customers,
         'testimonials': testimonials,
-        'testimonial_intro': testimonial_intro,
+        # 'testimonial_intro': testimonial_intro,
         'price_plans':price_plans,
         'navigation_links': navigation_links,
         'navigation_footer': navigation_footer,
@@ -73,9 +73,9 @@ def about_view(request):
     contextvar = {
         'services':services,
         'customers': customers,
-        'customer_intro': customer_intro,
+        # 'customer_intro': customer_intro,
         'team_mates':team_mates,
-        'team_mates_intro': team_mates_intro,
+        # 'team_mates_intro': team_mates_intro,
         'navigation_links': navigation_links,
         'navigation_footer': navigation_footer,
         'about': about,
@@ -88,9 +88,9 @@ def projects_view(request):
 
     contextvar = {
         'customers': customers,
-        'customer_intro': customer_intro,
+        # 'customer_intro': customer_intro,
         'projects': projects,
-        'projects_intro': projects_intro,
+        # 'projects_intro': projects_intro,
         'navigation_links': navigation_links,
         'navigation_footer': navigation_footer,
     }
