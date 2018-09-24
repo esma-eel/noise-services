@@ -22,5 +22,13 @@
             {% cycle "" "" "</div><div class='row'>" %}
             {% endfor %}
         </div>
+        {% if request.path == '/' %}
+        <div class="row margin-b-40">
+            <div class="col-sm-12">
+                <h4 class="text-center"><a class="btn-theme btn-theme-sm btn-base-bg text-uppercase" href="/pricing">مشاهده تعرفه های دیگر</a></h4>
+            </div>
+        </div>
+        {% endif %}
+        
     </div>
 </div>

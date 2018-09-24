@@ -8,7 +8,7 @@ class PriceFeautreAdmin(admin.ModelAdmin):
 
 
 class PricePlanAdmin(admin.ModelAdmin):
-    list_display = ('name', 'is_special', 'price', )
+    list_display = ('name', 'description','is_special', 'price', )
 
 
 admin.site.register(PlanFeature,PriceFeautreAdmin)
