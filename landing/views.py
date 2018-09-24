@@ -31,8 +31,7 @@ navigation_footer = Navigation.objects.filter(for_footer=True).all()
 def index(request):
 
     projects = Project.objects.all()[:3]
-    price_plans = PricePlan.objects.all()[:3]
-
+    price_plans = PricePlan.objects.all().reverse()[:3] # get 3 first plans and show them in index
     contextvar = {
         'text': 'this is text wiitch',
         'services':services,
