@@ -22,8 +22,8 @@ class Project(models.Model):
     image = models.ImageField(upload_to='projects/', null=True, blank=True)
     name = models.CharField(max_length=1000)
     description = models.TextField()
-    team_mates = models.ManyToManyField('Person', related_name='person_projects', null=True, blank=True)
-    technologies = models.ManyToManyField('Technology', related_name='tech_used_in_projects', null=True, blank=True)
+    team_mates = models.ManyToManyField('Person', related_name='person_projects', blank=True)
+    technologies = models.ManyToManyField('Technology', related_name='tech_used_in_projects', blank=True)
     customer = models.CharField(max_length=1500, null=True, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
 
