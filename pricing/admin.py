@@ -11,6 +11,7 @@ class PriceFeautreAdmin(admin.ModelAdmin):
 
 class PricePlanAdmin(admin.ModelAdmin):
     list_display = ('name', 'description','is_special', 'price', )
+    list_editable = ('price',)
 
 
 admin.site.register(PlanFeature,PriceFeautreAdmin)
