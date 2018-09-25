@@ -9,7 +9,7 @@
             </div>
             <div class="col-sm-8">
                 <div class="margin-b-60">
-                    <p>{{team_mate_detail.description}}</p>
+                    <p>{{team_mate_detail.description|safe|linebreaks}}</p>
                 </div>
                 {% for person_skill in team_mate_detail.person_skills.all %}
                 <div class="progress-box text-left">
